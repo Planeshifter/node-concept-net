@@ -12,7 +12,6 @@ function ConceptNet(){
 	
 };
 
-
 ConceptNet.prototype.lookup = function(URI, params, callback){
 	
 	var limit = params.limit || 50;

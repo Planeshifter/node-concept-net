@@ -2,7 +2,7 @@
   "name": "concept-net",
   "version": "0.0.0",
   "description": "interface to the ConceptNet semantic network",
-  "main": "init.js",
+  "main": "src/store.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
