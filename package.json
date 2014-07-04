@@ -1,0 +1,32 @@
+{
+  "name": "concept-net",
+  "version": "0.0.0",
+  "description": "interface to the ConceptNet semantic network",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Planeshifter/node-concept-net.git"
+  },
+  "keywords": [
+    "ConceptNet",
+    "semantic-web",
+    "knowledge-base",
+    "semantic-network",
+    "RDF",
+    "DBpedia"
+  ],
+  "author": "Philipp Burckhardt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Planeshifter/node-wiktionary/issues"
+  },
+  "homepage": "https://github.com/Planeshifter/node-wiktionary",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "dependencies": {
+   }
+}
