@@ -1,3 +1,6 @@
+[![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/rstats)
+
+
 node-ConceptNet
 ===============
 
