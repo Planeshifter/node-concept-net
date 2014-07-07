@@ -48,7 +48,7 @@ cnet.lookup("/c/en/toast",{
 	offset: 0,
 	filter: "core"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
 
 ### `.search(params, callback)`
@@ -62,7 +62,7 @@ Example code:
 cnet.lookup({
 text: "donut"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
 
 ### `.association(input, [params], callback)`
@@ -76,5 +76,5 @@ cnet.association("/c/en/hotdog",{
 	limit: 10,
 	filter: "/c/en/donut"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
