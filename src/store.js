@@ -1,7 +1,7 @@
 var http = require('http');
 var querystring = require('querystring');
 
-// constructor 
+// constructor function
 function ConceptNet(){
 
 	if (!(this instanceof ConceptNet)){
@@ -10,7 +10,7 @@ function ConceptNet(){
 	
 	this.host = 'conceptnet5.media.mit.edu';
 	
-};
+}
 
 ConceptNet.prototype.lookup = function(URI, params, callback){
 	
@@ -37,7 +37,7 @@ ConceptNet.prototype.search = function(params, callback){
 	 options.path = path;
 	 
 	 this.makeHtppRequest(options, callback);
-}
+};
 
 function isConceptNetURI(uri){
 	var  myRegEx = /\/(?:[acdelrs]|and|or)\/[a-zA-Z]{2}\/\w+/;
@@ -63,8 +63,8 @@ ConceptNet.prototype.association = function(input, params, callback){
 		 if (params.filter){
 			 if (isConceptNetURI(params.filter)) path += "&filter" + params.filter;	 
 			 else{
-				 var err = new Error("The GET argument filter must be a valid ConceptNet URI.");
-				 return callback(err);
+				 var err2 = new Error("The GET argument filter must be a valid ConceptNet URI.");
+				 return callback(err2);
 			 }
 		 }
 		 
@@ -90,5 +90,5 @@ ConceptNet.prototype.makeHtppRequest = function(options, callback){
 	 http.request(options, retrieve).end();
 };
 
-
+// export node module
 module.exports = ConceptNet;
