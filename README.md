@@ -15,7 +15,7 @@ npm install concept-net
 To require the module in a project, we can use the expression
 
 ```
-var conceptNet = require('concept-net');
+var ConceptNet = require('concept-net');
 ```
 
 # Getting Started 
@@ -24,7 +24,7 @@ The module exports a single constructor which can be used to open an API connect
 expression result in a variable:
 
 ```
-var cnet = conceptNet();
+var conceptNet = ConceptNet();
 ```
 
 We can then use the following three methods to query the ConceptNet API:
@@ -40,12 +40,12 @@ wrong during the function invocation. If the query is successfull, *err* is `und
 
 Example code: 
 ```
-cnet.lookup("/c/en/toast",{
+conceptNet.lookup("/c/en/toast",{
 	limit: 10,
 	offset: 0,
 	filter: "core"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
 
 ### `.search(params, callback)`
@@ -56,10 +56,10 @@ The official ConceptNet API documentation provides a full overview of the possib
 
 Example code: 
 ```
-cnet.lookup({
+conceptNet.lookup({
 text: "donut"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
 
 ### `.association(input, [params], callback)`
@@ -69,9 +69,9 @@ path.
 
 Example code: 
 ```
-cnet.association("/c/en/hotdog",{
+conceptNet.association("/c/en/hotdog",{
 	limit: 10,
 	filter: "/c/en/donut"}, function(err, result){
 	 // insert code here
-	}
+	})
 ```
