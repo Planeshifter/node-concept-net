@@ -59,11 +59,7 @@ The official ConceptNet API documentation provides a full overview of the possib
 
 Example code: 
 ```
-<<<<<<< HEAD
-conceptNet.lookup({
-=======
-cnet.search({
->>>>>>> 7d5c222eb07183742c7b15e139720bdce78775d4
+conceptNet.search({
 text: "donut"}, function(err, result){
 	 // insert code here
 	})
