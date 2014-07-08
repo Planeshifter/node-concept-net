@@ -30,6 +30,9 @@ expression result in a variable:
 var conceptNet = ConceptNet();
 ```
 
+In case that you are running an own copy of the ConceptNet server, the constructor takes the hostname of the
+server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu".
+
 We can then use the following three methods to query the ConceptNet API:
 
 ## Methods 

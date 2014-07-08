@@ -1,6 +1,6 @@
 {
   "name": "concept-net",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "interface to the ConceptNet semantic network",
   "main": "src/store.js",
   "scripts": {

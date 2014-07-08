@@ -2,13 +2,14 @@ var http = require('http');
 var querystring = require('querystring');
 
 // constructor function
-function ConceptNet(){
+function ConceptNet(host){
 
+	// if not invoked as a constructor call
 	if (!(this instanceof ConceptNet)){
 		return new ConceptNet();
 	}
 	
-	this.host = 'conceptnet5.media.mit.edu';
+	this.host = host ||'conceptnet5.media.mit.edu';
 	
 }
 
