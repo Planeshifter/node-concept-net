@@ -1,3 +1,6 @@
+[![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/rstats)
+
+
 node-ConceptNet
 ===============
 
@@ -56,7 +59,11 @@ The official ConceptNet API documentation provides a full overview of the possib
 
 Example code: 
 ```
+<<<<<<< HEAD
 conceptNet.lookup({
+=======
+cnet.search({
+>>>>>>> 7d5c222eb07183742c7b15e139720bdce78775d4
 text: "donut"}, function(err, result){
 	 // insert code here
 	})
