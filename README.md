@@ -16,7 +16,7 @@ The ConceptNet package can be easily installed via npm:
 npm install concept-net
 ```
 
-To require the module in a project, we can use the expression
+To require the module in a project, we can use the expression:
 
 ```
 var ConceptNet = require('concept-net');
