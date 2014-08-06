@@ -1,11 +1,12 @@
 [![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/rstats)
-
+[![build status](https://secure.travis-ci.org/Planeshifter/node-concept-net.png)](http://travis-ci.org/Planeshifter/node-concept-net)
 
 node-ConceptNet
 ===============
 
 node.js interface to the ConceptNet semantic network API. For further information, consult the website of the project: 
 [http://conceptnet5.media.mit.edu/](http://conceptnet5.media.mit.edu/).
+
 
 # Introduction
 
