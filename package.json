@@ -1,6 +1,6 @@
 {
   "name": "concept-net",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "interface to the ConceptNet semantic network",
   "main": "src/store.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "author": "Philipp Burckhardt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Planeshifter/node-concept-net.git/issues"
+    "url": "https://github.com/Planeshifter/node-concept-net/issues"
   },
   "homepage": "https://github.com/Planeshifter/node-concept-net",
   "devDependencies": {
