@@ -1,4 +1,4 @@
-[![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/rstats)
+[![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/concept-net)
 [![build status](https://secure.travis-ci.org/Planeshifter/node-concept-net.png)](http://travis-ci.org/Planeshifter/node-concept-net)
 
 node-ConceptNet
