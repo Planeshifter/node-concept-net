@@ -31,7 +31,9 @@ ConceptNet.prototype.lookup = function(URI, params, callback){
 ConceptNet.prototype.search = function(params, callback){
 	 var path = "/data/5.2/search?";
 
-	 path += querystring.stringify(params);
+	 var str = querystring.stringify(params);
+	 str = querystring.unescape(str);
+	 path += str;
 
 	 var options = {};
 	 options.host = this.host;
