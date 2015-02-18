@@ -32,13 +32,13 @@ var conceptNet = ConceptNet();
 ```
 
 In case that you are running an own copy of the ConceptNet server, the constructor takes the hostname of the
-server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu".
+server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu:80".
 
 ```
-ConceptNet('hostname', 'port', 'conceptnet version number');
+ConceptNet('<hostname>', '<port>', '<conceptnet version number>');
 ```
 
-Example code:
+Example:
 ```
 var conceptNet = ConceptNet('10.0.0.1', '10053', '5.3');
 ```
