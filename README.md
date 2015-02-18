@@ -1,5 +1,6 @@
-[![NPM version](https://badge.fury.io/js/concept-net.svg)](http://badge.fury.io/js/concept-net)
-[![build status](https://secure.travis-ci.org/Planeshifter/node-concept-net.png)](http://travis-ci.org/Planeshifter/node-concept-net)
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependencies][dependencies-image]][dependencies-url]
 
 node-ConceptNet
 ===============
@@ -96,3 +97,21 @@ conceptNet.association("/c/en/hotdog",{
 	 // insert code here
 	})
 ```
+
+## Unit Tests
+
+Run tests via the command `npm test`
+
+---
+## License
+
+[MIT license](http://opensource.org/licenses/MIT). 
+
+[npm-image]: https://badge.fury.io/js/concept-net.svg
+[npm-url]: http://badge.fury.io/js/concept-net
+
+[travis-image]: https://travis-ci.org/Planeshifter/node-concept-net.svg
+[travis-url]: https://travis-ci.org/Planeshifter/node-concept-net
+
+[dependencies-image]: http://img.shields.io/david/Planeshifter/node-concept-net.svg
+[dependencies-url]: https://david-dm.org/Planeshifter/node-concept-net
