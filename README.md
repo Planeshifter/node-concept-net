@@ -1,5 +1,6 @@
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
 [![Dependencies][dependencies-image]][dependencies-url]
 
 node-ConceptNet
@@ -105,13 +106,16 @@ Run tests via the command `npm test`
 ---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 [npm-image]: https://badge.fury.io/js/concept-net.svg
 [npm-url]: http://badge.fury.io/js/concept-net
 
 [travis-image]: https://travis-ci.org/Planeshifter/node-concept-net.svg
 [travis-url]: https://travis-ci.org/Planeshifter/node-concept-net
+
+[coveralls-image]: https://img.shields.io/coveralls/Planeshifter/node-concept-net/master.svg
+[coveralls-url]: https://coveralls.io/r/Planeshifter/node-concept-net?branch=master
 
 [dependencies-image]: http://img.shields.io/david/Planeshifter/node-concept-net.svg
 [dependencies-url]: https://david-dm.org/Planeshifter/node-concept-net

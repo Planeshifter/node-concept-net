@@ -4,7 +4,9 @@
   "description": "interface to the ConceptNet semantic network",
   "main": "src/store.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "./node_modules/.bin/mocha",
+    "test-cov": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coveralls/coverage --report lcovonly -- -R spec && cat ./reports/coveralls/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./reports/coveralls"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,11 @@
   },
   "homepage": "https://github.com/Planeshifter/node-concept-net",
   "devDependencies": {
+    "coveralls": "^2.11.2",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
+    "istanbul": "^0.3.8",
     "mocha": "^1.21.4"
   },
   "dependencies": {}
