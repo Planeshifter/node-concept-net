@@ -71,11 +71,11 @@ ConceptNet.prototype.association = function(input, params, callback) {
     }
 
     var limit = params.limit || 10;
-    var path = "/data/" + this.version + "/assoc" + String(input) + "?limit" + limit;
+    var path = "/data/" + this.version + "/assoc" + String(input);
 
     if ( params.filter ) {
         if ( isConceptNetURI(params.filter) ) {
-            path += "&filter" + params.filter;
+            path += "?filter=" + params.filter + "&limit=" + limit;
         } else {
             var err2 = new Error("The GET argument filter must be a valid ConceptNet URI.");
             return callback(err2);
