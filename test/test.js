@@ -6,13 +6,13 @@ var conceptNet = require('../src/store.js');
 
 describe('conceptNet', function tests() {
 	describe('config', function test() {
-		it('creates an instance of conceptNet', function (done) {
+		it('creates an instance of conceptNet', function test(done) {
 			var cnet = new conceptNet();
 			assert(cnet instanceof conceptNet);
 			done();
 		});
 
-		it('can be invoked without new', function (done) {
+		it('can be invoked without new', function test(done) {
 			var cnet = conceptNet();
 			assert(cnet instanceof conceptNet);
 			done();
@@ -39,7 +39,7 @@ describe('conceptNet', function tests() {
 		});
 
 		describe('override', function(){
-			it('has set hostname', function (done) {
+			it('has set hostname', function test(done) {
 				var cnet = new conceptNet('10.0.0.1','1234','5.3');
 				assert(cnet.host === '10.0.0.1');
 				done();
