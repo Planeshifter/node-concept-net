@@ -103,6 +103,16 @@ describe('conceptNet', function tests() {
 				);
 			});
 
+			it('handles concepts in other languages', function otherLangTest(done) {
+				this.timeout(1000);
+				var cnet = new conceptNet();
+				cnet.lookup("c/ar/سلام/",{
+					filter: "core"}, function(err, result){
+						assert(result.edges.length === 7);
+						done();
+					}
+				);
+			});
 		});
 
 		it('is possible to use search method to retrieve results', function test(done) {

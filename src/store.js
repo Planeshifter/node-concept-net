@@ -29,7 +29,9 @@ ConceptNet.prototype.lookup = function(URI, params, callback) {
     var limit = params.limit || 50;
     var offset = params.offset || 0;
 
-    var path = "/data/" + this.version + String(URI) + "?limit=" + limit + "&offset=" + offset;
+    var path = "/data/" + this.version + String(encodeURIComponent(URI)) +
+        "?limit=" + limit + "&offset=" + offset;
+
     if ( params.filter === "core" ) {
         path += "&filter=core";
     }
