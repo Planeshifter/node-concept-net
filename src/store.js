@@ -4,7 +4,7 @@ var http = require('http');
 var querystring = require('querystring');
 
 // constructor function
-function ConceptNet(host, port, version) {
+function ConceptNet( host, port, version ) {
 
     // if not invoked as a constructor call
     if ( !(this instanceof ConceptNet) ){
@@ -16,7 +16,7 @@ function ConceptNet(host, port, version) {
     this.port = parseInt(port || 80);
 }
 
-ConceptNet.prototype.buildOptions = function(path) {
+ConceptNet.prototype.buildOptions = function( path ) {
     var options = {};
     options.hostname = this.host;
     options.port = this.port;
@@ -24,12 +24,12 @@ ConceptNet.prototype.buildOptions = function(path) {
     return options;
 };
 
-ConceptNet.prototype.lookup = function(URI, params, callback) {
+ConceptNet.prototype.lookup = function( URI, params, callback ) {
 
     var limit = params.limit || 50;
     var offset = params.offset || 0;
 
-    var path = "/data/" + this.version + String(encodeURIComponent(URI)) +
+    var path = "/data/" + this.version + String( encodeURIComponent(URI) ) +
         "?limit=" + limit + "&offset=" + offset;
 
     if ( params.filter === "core" ) {
@@ -39,7 +39,7 @@ ConceptNet.prototype.lookup = function(URI, params, callback) {
     this.makeHtppRequest(this.buildOptions(path), callback);
 };
 
-ConceptNet.prototype.search = function(params, callback) {
+ConceptNet.prototype.search = function( params, callback ) {
 
     var path = "/data/" + this.version + "/search?";
     var str = querystring.stringify(params);
@@ -50,21 +50,21 @@ ConceptNet.prototype.search = function(params, callback) {
 
 };
 
-function isConceptNetURI(uri) {
+function isConceptNetURI( uri ) {
 
     var  myRegEx = /\/(?:[acdelrs]|and|or)\/[a-zA-Z]{2}\/\w+/;
     return (myRegEx.test(uri) ? true : false);
 
 }
 
-function isValidTermPath(path) {
+function isValidTermPath( path ) {
 
     var myRegEx = /\/list\/[a-zA-Z]{2}\/\w+(?:@[-+]?[0-9]*\.?[0-9]+)?(,\w+(?:@[-+]?[0-9]*\.?[0-9]+)?)*/;
     return (myRegEx.test(path) ? true : false);
 
 }
 
-ConceptNet.prototype.association = function(input, params, callback) {
+ConceptNet.prototype.association = function( input, params, callback ) {
 
     if( !isConceptNetURI(input) && !isValidTermPath(input) ) {
       var err = new Error("The input argument must be either a valid ConceptNet URI or a path of the form " +
@@ -87,7 +87,7 @@ ConceptNet.prototype.association = function(input, params, callback) {
     this.makeHtppRequest( this.buildOptions(path), callback );
 };
 
-ConceptNet.prototype.makeHtppRequest = function(options, callback) {
+ConceptNet.prototype.makeHtppRequest = function( options, callback ) {
     var retrieve = function(response) {
         var str = '';
         response.on('data', function (chunk) {
