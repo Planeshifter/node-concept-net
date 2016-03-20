@@ -71,16 +71,27 @@ conceptNet.lookup("/c/en/toast",{
 	})
 ```
 
+### `.URIstd(language, text, callback)`
+
+This method finds out what the [ConceptNet URI](https://github.com/commonsense/conceptnet5/wiki/API#uri-standardization) is for a given text, applying steps such as reducing English words to their root form.
+
+Example code:
+```
+conceptNet.URIstd('en', 'ground beef', function(err, result){
+	// insert code here
+})
+```
+
 ### `.search(params, callback)`
 
 The search method takes a parameter object and hands the retrieved results to the callback function.
 The official ConceptNet API documentation provides a full overview of the possible search parameters:
-[ConceptNet API documentation](https://github.com/commonsense/conceptnet5/wiki/API).
+[ConceptNet API documentation](https://github.com/commonsense/conceptnet5/wiki/API#search).
 
 Example code:
 ```
 conceptNet.search({
-text: "donut"}, function(err, result){
+start: "/c/en/donut"}, function(err, result){
 	 // insert code here
 	})
 ```
