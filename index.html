@@ -1,44 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>node-concept-net by Planeshifter</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>Node-concept-net by Planeshifter</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Node-Concept-Net</h1>
-        <h2>node.js interface to the ConceptNet semantic network API</h2>
-        <a href="https://github.com/Planeshifter/node-concept-net" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1>node-concept-net</h1>
+        <p>node.js interface to the ConceptNet semantic network API</p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <p><a href="http://badge.fury.io/js/rstats"><img src="https://badge.fury.io/js/concept-net.svg" alt="NPM version"></a>
-<a href="http://travis-ci.org/Planeshifter/node-concept-net"><img src="https://secure.travis-ci.org/Planeshifter/node-concept-net.png" alt="build status"></a></p>
+        <p class="view"><a href="https://github.com/Planeshifter/node-concept-net">View the Project on GitHub <small>Planeshifter/node-concept-net</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/Planeshifter/node-concept-net/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Planeshifter/node-concept-net/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Planeshifter/node-concept-net">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p><a href="http://badge.fury.io/js/concept-net"><img src="https://badge.fury.io/js/concept-net.svg" alt="NPM version"></a>
+<a href="https://travis-ci.org/Planeshifter/node-concept-net"><img src="https://travis-ci.org/Planeshifter/node-concept-net.svg" alt="Build Status"></a>
+<a href="https://coveralls.io/r/Planeshifter/node-concept-net?branch=master"><img src="https://img.shields.io/coveralls/Planeshifter/node-concept-net/master.svg" alt="Coverage Status"></a>
+<a href="https://david-dm.org/Planeshifter/node-concept-net"><img src="http://img.shields.io/david/Planeshifter/node-concept-net.svg" alt="Dependencies"></a></p>
 
 <h1>
-<a name="node-conceptnet" class="anchor" href="#node-conceptnet"><span class="octicon octicon-link"></span></a>node-ConceptNet</h1>
+<a id="conceptnet" class="anchor" href="#conceptnet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ConceptNet</h1>
 
-<p>node.js interface to the ConceptNet semantic network API. For further information, consult the website of the project: 
+<p>node.js interface to the ConceptNet semantic network API. For further information, consult the website of the project:
 <a href="http://conceptnet5.media.mit.edu/">http://conceptnet5.media.mit.edu/</a>.</p>
 
 <h1>
-<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
 
 <p>The ConceptNet package can be easily installed via npm:</p>
 
@@ -47,95 +49,115 @@
 
 <p>To require the module in a project, we can use the expression:</p>
 
-<pre><code>var ConceptNet = require('concept-net');
-</code></pre>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> ConceptNet <span class="pl-k">=</span> <span class="pl-c1">require</span>( <span class="pl-s"><span class="pl-pds">'</span>concept-net<span class="pl-pds">'</span></span> );</pre></div>
 
 <h1>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h1>
 
-<p>The module exports a single constructor which can be used to open an API connection. Simply call it an store the 
+<p>The module exports a single constructor which can be used to open an API connection. Simply call it an store the
 expression result in a variable:</p>
 
-<pre><code>var conceptNet = ConceptNet();
-</code></pre>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> conceptNet <span class="pl-k">=</span> <span class="pl-en">ConceptNet</span>();</pre></div>
 
 <p>In case that you are running an own copy of the ConceptNet server, the constructor takes the hostname of the
-server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu".</p>
+server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu:80".</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">ConceptNet</span>( <span class="pl-s"><span class="pl-pds">'</span>&lt;hostname&gt;<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>&lt;port&gt;<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>&lt;conceptnet version number&gt;<span class="pl-pds">'</span></span> );</pre></div>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> conceptNet <span class="pl-k">=</span> <span class="pl-en">ConceptNet</span>( <span class="pl-s"><span class="pl-pds">'</span>10.0.0.1<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>10053<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>5.3<span class="pl-pds">'</span></span> );</pre></div>
+
+<p>Note you can modify only the version by just passing null to the first two arguments:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> conceptNet <span class="pl-k">=</span> <span class="pl-en">ConceptNet</span>( <span class="pl-c1">null</span>, <span class="pl-c1">null</span>, <span class="pl-s"><span class="pl-pds">'</span>5.3<span class="pl-pds">'</span></span> );</pre></div>
 
 <p>We can then use the following three methods to query the ConceptNet API:</p>
 
 <h2>
-<a name="methods" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Methods</h2>
 
 <h3>
-<a name="lookupuri-params-callback" class="anchor" href="#lookupuri-params-callback"><span class="octicon octicon-link"></span></a><code>.lookup(uri, [params], callback)</code>
+<a id="lookup-uri-params-callback-" class="anchor" href="#lookup-uri-params-callback-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.lookup( uri[, params], callback )</code>
 </h3>
 
 <p>This method expects a valid ConceptNet URI as its first argument. See <a href="https://github.com/commonsense/conceptnet5/wiki/URI-hierarchy">the documentation</a>.
 Params is an (optional) object that specifies the arguments of the GET request. It can have the keys <em>limit</em>, <em>offset</em> and
 <em>filter</em>. The callback function has two parameters: The <em>err</em> parameter will return error objects in case that something goes
-wrong during the function invocation. If the query is successfull, <em>err</em> is <code>undefined</code> and the <em>result</em> parameter holds the result set from the query. </p>
+wrong during the function invocation. If the query is successful, <em>err</em> is <code>undefined</code> and the <em>result</em> parameter holds the result set from the query.</p>
 
-<p>Example code: </p>
+<p>Example code:</p>
 
-<pre><code>conceptNet.lookup("/c/en/toast",{
-    limit: 10,
-    offset: 0,
-    filter: "core"}, function(err, result){
-     // insert code here
-    })
-</code></pre>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">conceptNet</span>.<span class="pl-en">lookup</span>( <span class="pl-s"><span class="pl-pds">'</span>/c/en/toast<span class="pl-pds">'</span></span>, {
+    limit<span class="pl-k">:</span> <span class="pl-c1">10</span>,
+    offset<span class="pl-k">:</span> <span class="pl-c1">0</span>,
+    filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>core<span class="pl-pds">'</span></span>
+}, <span class="pl-k">function</span> <span class="pl-en">onDone</span>( <span class="pl-smi">err</span>, <span class="pl-smi">result</span> ) {
+    <span class="pl-c">// insert code here</span>
+})</pre></div>
 
 <h3>
-<a name="searchparams-callback" class="anchor" href="#searchparams-callback"><span class="octicon octicon-link"></span></a><code>.search(params, callback)</code>
+<a id="geturi-text-language-callback-" class="anchor" href="#geturi-text-language-callback-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.getURI( text[, language], callback )</code>
+</h3>
+
+<p>This method finds out what the <a href="https://github.com/commonsense/conceptnet5/wiki/API#uri-standardization">ConceptNet URI</a> is for a given text, applying steps such as reducing English words to their root form. The <code>language</code> parameter can be supplied a code for the language to use. If only two arguments are supplied, <code>language</code> is set to the default value <code>en</code>.</p>
+
+<p>Example code:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">conceptNet</span>.<span class="pl-en">getURI</span>( <span class="pl-s"><span class="pl-pds">'</span>ground beef<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>en<span class="pl-pds">'</span></span>, <span class="pl-k">function</span> <span class="pl-en">onDone</span>( <span class="pl-smi">err</span>, <span class="pl-smi">result</span> ) {
+    <span class="pl-c">// insert code here</span>
+})</pre></div>
+
+<h3>
+<a id="search-params-callback-" class="anchor" href="#search-params-callback-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.search( params, callback )</code>
 </h3>
 
 <p>The search method takes a parameter object and hands the retrieved results to the callback function.
 The official ConceptNet API documentation provides a full overview of the possible search parameters:
-<a href="https://github.com/commonsense/conceptnet5/wiki/API">ConceptNet API documentation</a>. </p>
+<a href="https://github.com/commonsense/conceptnet5/wiki/API#search">ConceptNet API documentation</a>.</p>
 
-<p>Example code: </p>
+<p>Example code:</p>
 
-<pre><code>conceptNet.search({
-text: "donut"}, function(err, result){
-     // insert code here
-    })
-</code></pre>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">conceptNet</span>.<span class="pl-c1">search</span>({
+    start<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/c/en/donut<span class="pl-pds">'</span></span>
+}, <span class="pl-k">function</span> <span class="pl-en">onDone</span>( <span class="pl-smi">err</span>, <span class="pl-smi">result</span> ) {
+    <span class="pl-c">// insert code here</span>
+})</pre></div>
 
 <h3>
-<a name="associationinput-params-callback" class="anchor" href="#associationinput-params-callback"><span class="octicon octicon-link"></span></a><code>.association(input, [params], callback)</code>
+<a id="association-input-params-callback-" class="anchor" href="#association-input-params-callback-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.association( input[, params], callback )</code>
 </h3>
 
 <p>The association method takes as its first input either a valid ConceptNet URI or a <code>/list/&lt;language&gt;/&lt;term list&gt;</code>
 path.</p>
 
-<p>Example code: </p>
+<p>Example code:</p>
 
-<pre><code>conceptNet.association("/c/en/hotdog",{
-    limit: 10,
-    filter: "/c/en/donut"}, function(err, result){
-     // insert code here
-    })
-</code></pre>
-        </section>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">conceptNet</span>.<span class="pl-en">association</span>( <span class="pl-s"><span class="pl-pds">'</span>/c/en/hotdog<span class="pl-pds">'</span></span>, {
+    limit<span class="pl-k">:</span> <span class="pl-c1">10</span>,
+    filter<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/c/en/donut<span class="pl-pds">'</span></span>
+}, <span class="pl-k">function</span> <span class="pl-en">onDone</span>( <span class="pl-smi">err</span>, <span class="pl-smi">result</span> ){
+    <span class="pl-c">// insert code here</span>
+})</pre></div>
 
-        <aside id="sidebar">
-          <a href="https://github.com/Planeshifter/node-concept-net/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/Planeshifter/node-concept-net/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+<h2>
+<a id="unit-tests" class="anchor" href="#unit-tests" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Unit Tests</h2>
 
-          <p class="repo-owner"><a href="https://github.com/Planeshifter/node-concept-net"></a> is maintained by <a href="http://www.philipp-burckhardt.com">Philipp Burckhardt</a>.</p>
+<p>Run tests via the command <code>npm test</code></p>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<hr>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Planeshifter">Planeshifter</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
-
-  
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>
