@@ -12,7 +12,7 @@ function ConceptNet( host, port, version ) {
     }
 
     this.host = host || 'conceptnet5.media.mit.edu';
-    this.version = version || '5.2';
+    this.version = version || '5.4';
     this.port = parseInt(port || 80);
 }
 
@@ -35,6 +35,15 @@ ConceptNet.prototype.lookup = function( URI, params, callback ) {
     if ( params.filter === "core" ) {
         path += "&filter=core";
     }
+
+    this.makeHtppRequest(this.buildOptions(path), callback);
+};
+
+ConceptNet.prototype.URIstd = function( language, text, callback ) {
+
+    text = text.replace(/\s+/g, '_');
+
+    var path = "/data/" + this.version + "/uri?language=" + language + "&text=" + String( encodeURIComponent(text) );
 
     this.makeHtppRequest(this.buildOptions(path), callback);
 };

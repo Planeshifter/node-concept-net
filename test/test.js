@@ -33,7 +33,7 @@ describe( 'conceptNet', function tests() {
 
 			it( 'has default version', function test( done ) {
 				var cnet = new conceptNet();
-				assert( cnet.version === '5.2' );
+				assert( cnet.version === '5.4' );
 				done();
 			});
 		});
@@ -106,24 +106,46 @@ describe( 'conceptNet', function tests() {
 			it( 'handles concepts in other languages', function otherLangTest( done ) {
 				this.timeout(2000);
 				var cnet = new conceptNet();
-				cnet.lookup('c/ar/سلام/',{
+				cnet.lookup('/c/ja/車',{
 					filter: 'core'}, function( err, result ) {
-						assert( result.edges.length === 7 );
+						assert( result.edges.length === 50 );
 						done();
 					}
 				);
 			});
 		});
 
-		it( 'is possible to use search method to retrieve results', function test( done ) {
+		it( 'is possible to use search method to find ConceptNet edges for multiple requirements', function test( done ) {
 			this.timeout(2000);
 			var cnet = new conceptNet();
-			cnet.search({text: 'donut'}, function( err, result ) {
+			cnet.search({start: '/c/en/donut'}, function( err, result ) {
 				assert( result.numFound > 0 );
 				done();
 			});
 		});
 
+		describe( '.URIstd()', function tests() {
+
+			it( 'looks up the ConceptNet URI for text (english)', function test( done ) {
+				this.timeout(2000);
+				var cnet = new conceptNet();
+				cnet.URIstd('en', 'ground beef', function( err, result ) {
+						assert( result.uri == '/c/en/grind_beef' );
+						done();
+					}
+				);
+			});
+
+			it( 'looks up the ConceptNet URI for text (foreign language)', function test( done ) {
+				this.timeout(2000);
+				var cnet = new conceptNet();
+				cnet.URIstd('ja', '車', function( err, result ) {
+						assert( result.uri == '/c/ja/車' );
+						done();
+					}
+				);
+			});
+		});
 
 		describe( '.association()', function tests() {
 
@@ -142,10 +164,10 @@ describe( 'conceptNet', function tests() {
 				this.timeout(3000);
 				var cnet = new conceptNet();
 				cnet.association('/c/en/cat', {
-					limit: 4,
+					limit: 1,
 					filter: '/c/en/dog'},
 					function( err, result ) {
-						assert( result.similar.length === 4 );
+						assert( result.similar.length === 1 );
 						done();
 					});
 			});
