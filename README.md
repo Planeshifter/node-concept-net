@@ -37,17 +37,17 @@ In case that you are running an own copy of the ConceptNet server, the construct
 server as an optional argument. The default option evaluates to "conceptnet5.media.mit.edu:80".
 
 ```javascript
-ConceptNet('<hostname>', '<port>', '<conceptnet version number>');
+ConceptNet( '<hostname>', '<port>', '<conceptnet version number>' );
 ```
 
 Example:
 ```javascript
-var conceptNet = ConceptNet('10.0.0.1', '10053', '5.3');
+var conceptNet = ConceptNet( '10.0.0.1', '10053', '5.3' );
 ```
 Note you can modify only the version by just passing null to the first two arguments:
 
 ```javascript
-var conceptNet = ConceptNet(null, null, '5.3');
+var conceptNet = ConceptNet( null, null, '5.3' );
 ```
 
 We can then use the following three methods to query the ConceptNet API:
@@ -63,12 +63,13 @@ wrong during the function invocation. If the query is successful, *err* is `unde
 
 Example code:
 ```javascript
-conceptNet.lookup("/c/en/toast",{
+conceptNet.lookup( '/c/en/toast', {
 	limit: 10,
 	offset: 0,
-	filter: "core"}, function(err, result){
-	 // insert code here
-	})
+	filter: 'core'
+}, function onDone( err, result ) {
+	// insert code here
+})
 ```
 
 ### `.getURI( text[, language], callback )`
