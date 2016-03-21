@@ -32,5 +32,9 @@
     "istanbul": "^0.3.8",
     "mocha": "2.x.x"
   },
-  "dependencies": {}
+  "dependencies": {
+    "validate.io-function": "^1.0.2",
+    "validate.io-object": "^1.0.4",
+    "validate.io-string-primitive": "^1.0.0"
+  }
 }
