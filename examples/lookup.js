@@ -1,9 +1,12 @@
-var ConceptNet = require("../src/store.js");
-var conceptNet = new ConceptNet();
+'use strict';
 
-conceptNet.lookup("/c/en/toast",{
-    limit: 10,
-    offset: 0,
-    filter: "core"}, function(err, result){
-      console.log(result);
-    });
+var ConceptNet = require( '../lib/index.js' );
+var cNet = new ConceptNet();
+
+cNet.lookup( '/c/en/toast',{
+	limit: 10,
+	offset: 0,
+	filter: 'core'
+}, function onDone( err, result ) {
+	console.log(result);
+});

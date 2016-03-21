@@ -1,7 +1,10 @@
-var ConceptNet = require("../src/store.js");
-var conceptNet = new ConceptNet();
+'use strict';
 
-conceptNet.search({
-	text: "donut"}, function(err, result){
-	    console.log(result);
-	    });
+var ConceptNet = require( '../lib/index.js' );
+var cNet = new ConceptNet();
+
+cNet.search({
+	text: 'donut'
+}, function onDone( err, result ) {
+	console.log( result );
+});
